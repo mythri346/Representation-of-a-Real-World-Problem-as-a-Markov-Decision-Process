@@ -1,13 +1,9 @@
-# Representation-of-a-Real-World-Problem-as-a-Markov-Decision-Process
 
+## Representation of a Real-World Problem as a Markov Decision Process (MDP)
 
-## Aim
+### Aim
 
-Write your aim here.
-
-Example:
-
-> To identify a real-world sequential decision-making problem and represent it formally as a Markov Decision Process by defining its states, actions, rewards, transitions, and Python representation.
+To represent a food delivery robot system as a Markov Decision Process (MDP) by defining its states, actions, rewards, transition probabilities, and Python representation.
 
 ---
 
@@ -15,10 +11,7 @@ Example:
 
 ### Problem Description
 
-Write your answer here.
-
-Describe the real-world application that you selected.
-
+A food delivery robot delivers food orders inside a restaurant or hospital. The robot must decide the best path to reach the customer's location while avoiding obstacles and minimizing delivery time. The objective is to deliver the food safely and quickly with maximum efficiency.
 
 ---
 
@@ -44,140 +37,193 @@ Where:
 
 ## State Space
 
-Write your answer here.
-
-The state space should list all possible situations in which the agent can exist.
-
-Example format:
+The possible states of the robot are:
 
 ```text
 S = {
-    State 1,
-    State 2,
-    State 3,
-    ...
+    Waiting for Order,
+    Moving,
+    Obstacle Detected,
+    Delivering Food,
+    Delivery Completed
 }
 ```
-
-
 
 ---
 
 ## Sample State
 
-Write your answer here.
+```text
+**Moving**
 
-A sample state is one specific example from the state space.
-
-
+The robot is travelling toward the customer's location.
+```
 
 ---
 
 ## Action Space
 
-Write your answer here.
-
-The action space should list all possible actions available to the agent.
-
-Example format:
+The possible actions of the robot are:
 
 ```text
 A = {
-    Action 1,
-    Action 2,
-    Action 3,
-    ...
+    Move Forward,
+    Turn Left,
+    Turn Right,
+    Stop,
+    Deliver Food
 }
 ```
-
 
 ---
 
 ## Sample Action
 
-Write your answer here.
+```text
+ **Move Forward**
 
-A sample action is one action selected from the action space.
-
-
+The robot moves one step closer to the delivery destination.
+```
 
 ---
 
 ## Transition Probability
 
-Write your answer here.
+The transition probability describes the likelihood of moving from one state to another after performing an action.
 
-The transition probability explains how the environment moves from one state to another after an action is taken.
+[
+P(s'|s,a)
+]
 
-General form:
+Example:
 
-$$
-P(s' \mid s,a)
-$$
-
-This means:
-
-> Probability of reaching next state $s'$ after taking action $a$ in current state $s$.
-
+* Moving → Delivering Food after **Move Forward** = **0.9**
+* Moving → Obstacle Detected after **Move Forward** = **0.1**
 
 ---
 
 ## Reward Function
 
-Write your answer here.
+The reward function provides feedback to the robot based on its actions.
 
-The reward function defines the feedback received by the agent after taking an action.
-
-General form:
-
-$$
+[
 R(s,a,s')
-$$
+]
 
+Example:
 
+* Successful delivery = **+20**
+* Reaching destination = **+10**
+* Hitting an obstacle = **−10**
+* Delay in delivery = **−5**
 
 ---
 
 ## Graphical Representation
 
-Write your answer here.
 
-Draw the MDP graph.
-
-The graph should include:
-
-1. States as nodes.
-2. Actions as arrows.
-3. Rewards on transitions.
-4. Transition probabilities if applicable.
+<img width="1536" height="1024" alt="mdp image" src="https://github.com/user-attachments/assets/0f6af28b-d78b-4179-9fc4-7922efebf50f" />
 
 
----
+
+
 
 ## Python Representation
 
-Write your code here.
-
-Use Python dictionaries to represent the MDP.
-
-
 ```python
 # MDP Representation using Python
-# print("Name:       ")
-# print("Register Number:     ")
 
+print("Name: Mythri Ekkaluri")
+print("Register Number: __________")
+
+states = [
+    "Waiting for Order",
+    "Moving",
+    "Obstacle Detected",
+    "Delivering Food",
+    "Delivery Completed"
+]
+
+actions = [
+    "Move Forward",
+    "Turn Left",
+    "Turn Right",
+    "Stop",
+    "Deliver Food"
+]
+
+transition = {
+    "Waiting for Order": {
+        "Move Forward": "Moving"
+    },
+    "Moving": {
+        "Move Forward": "Delivering Food",
+        "Turn Left": "Obstacle Detected",
+        "Turn Right": "Moving"
+    },
+    "Delivering Food": {
+        "Deliver Food": "Delivery Completed"
+    }
+}
+
+rewards = {
+    ("Waiting for Order", "Move Forward"): 5,
+    ("Moving", "Move Forward"): 10,
+    ("Moving", "Turn Left"): -10,
+    ("Moving", "Turn Right"): 2,
+    ("Delivering Food", "Deliver Food"): 20
+}
+
+print("States:", states)
+print("Actions:", actions)
+print("Transitions:", transition)
+print("Rewards:", rewards)
 ```
+
 ---
+
 ## Output
 
-Write your Python output here.
+```text
 
+
+States:
+['Waiting for Order', 'Moving', 'Obstacle Detected',
+ 'Delivering Food', 'Delivery Completed']
+
+Actions:
+['Move Forward', 'Turn Left', 'Turn Right',
+ 'Stop', 'Deliver Food']
+
+Transitions:
+{
+ 'Waiting for Order': {'Move Forward': 'Moving'},
+ 'Moving': {
+     'Move Forward': 'Delivering Food',
+     'Turn Left': 'Obstacle Detected',
+     'Turn Right': 'Moving'
+ },
+ 'Delivering Food': {
+     'Deliver Food': 'Delivery Completed'
+ }
+}
+
+Rewards:
+{
+ ('Waiting for Order','Move Forward'): 5,
+ ('Moving','Move Forward'): 10,
+ ('Moving','Turn Left'): -10,
+ ('Moving','Turn Right'): 2,
+ ('Delivering Food','Deliver Food'): 20
+}
+```
 
 ---
 
 ## Result
 
-Write your result here.
+The food delivery robot problem was successfully represented as a Markov Decision Process by defining its state space, action space, transition probabilities, reward function, and Python implementation. This model helps the robot make optimal decisions to deliver food efficiently while avoiding obstacles.
+
 
 
 
