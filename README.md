@@ -1,11 +1,11 @@
 
 ## Representation of a Real-World Problem as a Markov Decision Process (MDP)
 
-### Aim
+## Aim
 
 To represent a food delivery robot system as a Markov Decision Process (MDP) by defining its states, actions, rewards, transition probabilities, and Python representation.
 
----
+
 
 ## Problem Statement
 
@@ -13,7 +13,7 @@ To represent a food delivery robot system as a Markov Decision Process (MDP) by 
 
 A food delivery robot delivers food orders inside a restaurant or hospital. The robot must decide the best path to reach the customer's location while avoiding obstacles and minimizing delivery time. The objective is to deliver the food safely and quickly with maximum efficiency.
 
----
+
 
 ## MDP Components
 
@@ -39,7 +39,7 @@ Where:
 
 The possible states of the robot are:
 
-```text
+```
 S = {
     Waiting for Order,
     Moving,
@@ -49,7 +49,7 @@ S = {
 }
 ```
 
----
+
 
 ## Sample State
 
@@ -73,7 +73,7 @@ A = {
 }
 ```
 
----
+
 
 ## Sample Action
 
@@ -126,12 +126,12 @@ Example:
 
 
 ## Python Representation
+### MDP Representation using Python
+### NAME: Ekkaluri Mythri
+### REG.NO: 212223240034
 
-```python
-# MDP Representation using Python
+```
 
-print("Name: Mythri Ekkaluri")
-print("Register Number: __________")
 
 states = [
     "Waiting for Order",
@@ -187,7 +187,7 @@ print("Rewards:", rewards)
 
 
 
----
+
 
 ## Result
 
@@ -196,5 +196,5 @@ The food delivery robot problem was successfully represented as a Markov Decisio
 
 
 
----
+
 
