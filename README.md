@@ -53,13 +53,11 @@ S = {
 
 ## Sample State
 
-```text
+
 **Moving**
 
 The robot is travelling toward the customer's location.
-```
 
----
 
 ## Action Space
 
@@ -79,13 +77,12 @@ A = {
 
 ## Sample Action
 
-```text
+
  **Move Forward**
 
 The robot moves one step closer to the delivery destination.
-```
 
----
+
 
 ## Transition Probability
 
@@ -184,39 +181,11 @@ print("Rewards:", rewards)
 
 ## Output
 
-```text
 
 
-States:
-['Waiting for Order', 'Moving', 'Obstacle Detected',
- 'Delivering Food', 'Delivery Completed']
+<img width="1527" height="76" alt="image" src="https://github.com/user-attachments/assets/5fade028-ed42-47e5-8378-56594e1ee86c" />
 
-Actions:
-['Move Forward', 'Turn Left', 'Turn Right',
- 'Stop', 'Deliver Food']
 
-Transitions:
-{
- 'Waiting for Order': {'Move Forward': 'Moving'},
- 'Moving': {
-     'Move Forward': 'Delivering Food',
-     'Turn Left': 'Obstacle Detected',
-     'Turn Right': 'Moving'
- },
- 'Delivering Food': {
-     'Deliver Food': 'Delivery Completed'
- }
-}
-
-Rewards:
-{
- ('Waiting for Order','Move Forward'): 5,
- ('Moving','Move Forward'): 10,
- ('Moving','Turn Left'): -10,
- ('Moving','Turn Right'): 2,
- ('Delivering Food','Deliver Food'): 20
-}
-```
 
 ---
 
