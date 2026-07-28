@@ -118,8 +118,8 @@ Example:
 
 ## Graphical Representation
 
+<img width="1400" height="1123" alt="mdp" src="https://github.com/user-attachments/assets/cbcc1c9e-5c18-4f68-a95e-2b6a4b286321" />
 
-<img width="1536" height="1024" alt="mdp image" src="https://github.com/user-attachments/assets/0f6af28b-d78b-4179-9fc4-7922efebf50f" />
 
 
 
